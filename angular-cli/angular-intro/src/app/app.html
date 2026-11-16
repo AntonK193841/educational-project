@@ -1,0 +1,24 @@
+<main class="card">
+  <h1>Мой предмет</h1>
+
+  <p>
+    <strong>Предмет:</strong> {{ subject }}
+  </p>
+  <p>
+    <strong>Преподаватель:</strong> {{ teacher }}
+  </p>
+
+  <p>Мы изучаем веб-разработку</p>
+
+  <button (click)="toggleTopics()">
+    {{ showTopics() ? 'Скрыть темы' : 'Показать темы' }}
+  </button>
+
+  @if (showTopics()) {
+    <ul>
+      @for (topic of topics; track topic) {
+        <li>{{ topic }}</li>
+      }
+    </ul>
+  }
+</main>
